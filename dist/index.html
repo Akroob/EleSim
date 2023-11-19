@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Link to your CSS file -->
+    <title>Elesim</title>
+    <script type="module" crossorigin src="/assets/index-4c94d722.js"></script>
+    <link rel="stylesheet" href="/assets/index-4fc9ae17.css">
+  </head>
+
+  <body>
+    <div id="loading-screen">
+      <div id="loading-progress">Loading...</div>
+    </div>
+
+    <!-- Toggle buttons -->
+    <div class="consumer-unit-toggle" id="consumer-unit-toggle">
+      Consumer Unit
+    </div>
+    <div class="schematics-toggle" id="schematics-toggle">Schematics</div>
+    <div class="graph-toggle" id="graph-toggle">Graph</div>
+    <div class="info-toggle" id="info-toggle"><i>i</i></div>
+
+    <!-- Divs to toggle (initially hidden) -->
+    <div class="content consumer-unit hidden" id="consumer-unit"></div>
+    <div class="content schematics hidden" id="schematics"></div>
+    <div class="content info hidden" id="info">
+      <div class="header" id="header"></div>
+      <div class="content" id="content">
+        <h1>Household Electrical Simulator</h1>
+
+        <p>
+          The Household Electrical Simulator is a 3D simulation tool that
+          provides a realistic representation of electrical components within a
+          household setting. Users can engage with switches, adjust resistance
+          values dynamically, and witness real-time changes in resistances and
+          current flow.
+        </p>
+
+        <h2>Simulation Principles:</h2>
+        <ul>
+          <li>Voltage is a constant 230V root-mean-square (RMS) value.</li>
+          <li>
+            Every device in this simulation has an active resistance value.
+          </li>
+          <li>
+            Electrical current depends on the value of the device resistance.
+          </li>
+          <li>
+            If the electrical current stays within the non-tripping device
+            protection value, then the simulation proceeds to work without
+            switching off the device protectors (MCB, RCD).
+          </li>
+        </ul>
+
+        <h2>Viewing Options:</h2>
+
+        <ul>
+          <li>Enable extra cameras for more convenient viewing.</li>
+          <li>
+            Interact with devices in the 3D world or from the equivalent
+            schematics.
+          </li>
+        </ul>
+
+        <h2>Simulation Parameters:</h2>
+
+        <ul>
+          <li>
+            Access simulation parameters on the top right side of the window.
+          </li>
+          <li>Customize the simulation experience by adjusting settings.</li>
+        </ul>
+
+        <h2>Interaction with Components:</h2>
+
+        <p><strong>Switches:</strong> Click to interact with switches.</p>
+        <p>
+          <strong>Rheostats:</strong> Click and drag the rheostat wipers to
+          adjust the resistance values.
+        </p>
+
+        <h2>Component Behavior:</h2>
+
+        <p>
+          <strong>Miniature Circuit Breaker (MCB):</strong> MCBs will trip when
+          current values exceed 16A or 25A. Each cable cross section has a limit
+          to how much current it can carry, in case of overcurrent in the
+          conductor, the MCB will trip.
+        </p>
+
+        <p>
+          <strong>Residual Current Device (RCD):</strong> The RCD will trip when
+          the current difference between phase and neutral exceeds 30mA. In
+          normal conditions the current flows between the phase and neutral
+          conductor, if the current flow exceeds 30mA in the protective earth
+          (PE), the RCD will trip.
+        </p>
+
+        <h2>Camera Controls:</h2>
+
+        <p><strong>Orbit:</strong> Hold Left Mouse button and drag.</p>
+        <p>
+          <strong>Zoom:</strong> Hold Middle Mouse button or Middle Mouse croll.
+        </p>
+        <p>
+          <strong>Pan/Tilt:</strong> Hold Shift + Left Mouse click and drag.
+        </p>
+      </div>
+      <div class="footer">
+        Contact: <a href="mailto:rainersdev@gmail.com"> rainersdev@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="content graph hidden" id="graph">
+      <div class="canvas-container">
+        <canvas id="sineWaveCanvas" width="620" height="290"></canvas>
+        <canvas id="gridCanvas" width="680" height="290"></canvas>
+      </div>
+    </div>
+
+    <div id="simscene"></div>
+    
+  </body>
+</html>
