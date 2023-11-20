@@ -1,2 +1,2 @@
 # EleSim
-threejs electrical simulator
+Household electrical simulator made with Threejs
